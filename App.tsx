@@ -1,20 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Cart from './src/pages/Cart';
+import { SafeAreaView, StyleSheet, Dimensions } from 'react-native';
+import { useFonts,
+  Inter_400Regular,
+  Inter_700Bold
+}from  '@expo-google-fonts/inter'
+
+const width = Dimensions.get("screen").width;
 
 export default function App() {
+  const [fonteCarregada] = useFonts({
+    "InterRegular" :   Inter_400Regular,
+    "InterBold":   Inter_700Bold,
+  }) 
+
+  if (!fonteCarregada){
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.fundo} >
+      <StatusBar/>
+      <Cart/>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  fundo:{
+    backgroundColor:'#fafafa',
+    flex: 1
+}
 });
