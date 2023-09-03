@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import Cart from './src/pages/Cart';
-import { SafeAreaView, StyleSheet, Dimensions } from 'react-native';
+import { SafeAreaView, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { useFonts,
   Inter_400Regular,
   Inter_700Bold
@@ -28,7 +27,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   fundo:{
+    flex: 1,
     backgroundColor:'#fcfcfc',
-    flex: 1
+
 }
 });
