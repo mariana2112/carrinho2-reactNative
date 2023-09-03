@@ -28,7 +28,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   fundo:{
-    backgroundColor:'#fafafa',
+    backgroundColor:'#fcfcfc',
     flex: 1
 }
 });
