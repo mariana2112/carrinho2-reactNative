@@ -6,7 +6,7 @@ import {
   View,
   Text,
   TextInput,
-  ScrollView,
+  ScrollView
 } from "react-native";
 import image from "../../../assets/image.png";
 import Bidu from "../../../assets/bidu.png";
