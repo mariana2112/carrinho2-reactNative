@@ -6,20 +6,17 @@ import {
   View,
   Text,
   TextInput,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import image from "../../../assets/image.png";
 import Bidu from "../../../assets/bidu.png";
 import monitor from "../../../assets/monitor.png";
-
-
 import Feather from "@expo/vector-icons/Feather";
+import mouse from "../../../assets/mouse.png";
 
 const width = Dimensions.get("screen").width;
 
-
 export default function Cart() {
-
   return (
     <>
       <View style={styles.cabecalho}>
@@ -32,16 +29,11 @@ export default function Cart() {
           <Text style={styles.bemvindo}>Bem vindo!</Text>
         </View>
 
-          <Feather name="layers"
-          size={25}
-            color="#5e0799"
-          />
-
+        <Feather name="layers" size={25} color="#5e0799" />
       </View>
 
       <ScrollView>
-
-      <View style={styles.search}>
+        <View style={styles.search}>
           <Feather
             name="search"
             size={25}
@@ -56,16 +48,23 @@ export default function Cart() {
 
         <Image source={image} style={styles.imagem} />
 
-      <View style={styles.container}>
         <View style={styles.item}>
-          <View style={styles.textitens}>
-          <Text>Monitor</Text>
-          <Text>R$1.800,00</Text>
+          <Image source={monitor} style={styles.imgitens} />
+          <View style={styles.atext}>
+            <Text style={styles.textprinc}>Monitor</Text>
+            <Text style={styles.text}>R$1.800</Text>
           </View>
-          <Image source={monitor} style={styles.imgitens}/>
-          <Feather name="heart" size={25} color='#5e0799'  style={styles.heart}/>
         </View>
-      </View>
+
+        <View style={styles.item2}>
+          <View style={styles.item}>
+            <Image source={mouse} style={styles.imgitens2} />
+            <View style={styles.atext}>
+              <Text style={styles.textprinc}>Mouse</Text>
+              <Text style={styles.text}>R$100</Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </>
   );
@@ -75,8 +74,8 @@ const styles = StyleSheet.create({
   cabecalho: {
     flexDirection: "row",
     padding: 8,
-    backgroundColor: '#ffff',
-    alignItems:'center',
+    backgroundColor: "#ffff",
+    alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
   imagem: {
     width: 350,
     height: 250,
-    alignSelf: 'center'
+    alignSelf: "center",
   },
   bidu: {
     width: 45,
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
   },
   textos: {
     paddingLeft: 10,
-    marginRight: 190
+    marginRight: 190,
   },
   search: {
     flexDirection: "row",
@@ -136,29 +135,48 @@ const styles = StyleSheet.create({
     width: 260,
     textAlign: "center",
   },
-  imgitens:{
+  imgitens: {
     height: 90,
     width: 140,
-    alignSelf:'flex-end'
+    marginTop: 10,
   },
-  item:{
-    marginBottom: 20,
-    borderColor: '#5e0799',
-    borderRadius: 25,
-    padding: 12,
-    borderWidth: 2,
+  imgitens2: {
+    height: 90,
+    width: 110,
+    marginTop: 10,
+    alignSelf:'center'
   },
-  textitens:{
-    flexDirection: 'column',
-  },
-  container:{
-    paddingVertical: 20,
-    paddingHorizontal: 20,
-  },
-  heart:{
-    alignSelf:'flex-end',
-    position:'absolute',
-    padding:15
-  }
+  item: {
+    backgroundColor: "white",
+    width: 150,
+    height: 150,
+    marginLeft: 30,
+    borderRadius: 10,
+    paddingBottom:10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
 
+    elevation: 4,
+  },
+  textprinc: {
+    fontSize: 20,
+    fontFamily: "InterBold",
+  },
+  text: {
+    fontSize: 15,
+    fontFamily: "InterRegular",
+  },
+  atext: {
+    marginLeft: 20,
+  },
+  item2:{
+    paddingLeft:170,
+    paddingBottom:10,
+    marginTop:-150
+  }
 });
