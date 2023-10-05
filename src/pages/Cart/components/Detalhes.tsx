@@ -14,7 +14,14 @@ import mouse from "../../../../assets/mouse.png";
 
 const width = Dimensions.get("screen").width;
 
-export default function Detalhe() {
+type Props ={
+  prd: string,
+  pr: string,
+  prdt: string,
+  prc: string
+}
+
+export default function Detalhe({prd, pr, prdt, prc}: Props) {
   return (
     <>
         <View style={styles.search}>
@@ -35,8 +42,8 @@ export default function Detalhe() {
         <View style={styles.item}>
           <Image source={monitor} style={styles.imgitens} />
           <View style={styles.atext}>
-            <Text style={styles.textprinc}>Monitor</Text>
-            <Text style={styles.text}>R$1.800</Text>
+            <Text style={styles.textprinc}>{prd}</Text>
+            <Text style={styles.text}>{prd}</Text>
           </View>
         </View>
 
@@ -44,8 +51,8 @@ export default function Detalhe() {
           <View style={styles.item}>
             <Image source={mouse} style={styles.imgitens2} />
             <View style={styles.atext}>
-              <Text style={styles.textprinc}>Mouse</Text>
-              <Text style={styles.text}>R$100</Text>
+              <Text style={styles.textprinc}>{prdt}</Text>
+              <Text style={styles.text}>{prc}</Text>
             </View>
           </View>
         </View>

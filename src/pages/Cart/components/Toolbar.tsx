@@ -1,11 +1,17 @@
 import React from "react";
 import Feather from "@expo/vector-icons/Feather";
 import Bidu from "../../../../assets/bidu.png";
+import mocks from '../../../mocks/cart';
 import { StyleSheet, Dimensions, Text, View, Image } from "react-native";
 
 const width = Dimensions.get("screen").width;
 
-export default function Detalhe() {
+type Props ={
+  ola: string,
+  bv: string
+}
+
+export default function Detalhe({ola, bv}: Props) {
   return (
     <>
     <View style={styles.cabecalho}>
@@ -14,8 +20,8 @@ export default function Detalhe() {
         </View>
 
         <View style={styles.textos}>
-          <Text style={styles.ola}>Olá, Bidu</Text>
-          <Text style={styles.bemvindo}>Bem vindo!</Text>
+          <Text style={styles.ola}>{ola}</Text>
+          <Text style={styles.bemvindo}>{bv}</Text>
         </View>
 
         <Feather name="layers" size={25} color="#5e0799" />
